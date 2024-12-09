@@ -1,0 +1,97 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-code-font-size: 95%;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.header-datalayer-io-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' aria-hidden='true' viewBox='0 0 20 20'%3E%3Cpath fill='%232ECC71' d='M0 0h20v4H0zm0 0'/%3E%3Cpath fill='%231ABC9C' d='M0 8h20v4H0zm0 0'/%3E%3Cpath fill='%2316A085' d='M0 16h20v4H0zm0 0'/%3E%3C/svg%3E%0A")
+    no-repeat;
+}
+
+.header-datalayer-io-link:hover {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .header-datalayer-io-link::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' aria-hidden='true' viewBox='0 0 20 20'%3E%3Cpath fill='%232ECC71' d='M0 0h20v4H0zm0 0'/%3E%3Cpath fill='%231ABC9C' d='M0 8h20v4H0zm0 0'/%3E%3Cpath fill='%2316A085' d='M0 16h20v4H0zm0 0'/%3E%3C/svg%3E%0A")
+    no-repeat;
+}
+
+.header-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg viewBox='0 0 80 80' version='1.1' id='svg4' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cdefs id='defs8' /%3E%3Cpath fill='%23959da5' d='M 40,0 C 17.9,0 0,17.900001 0,40 c 0,17.7 11.45,32.65 27.35,37.950001 2,0.35 2.75,-0.85 2.75,-1.9 0,-0.95 -0.05,-4.1 -0.05,-7.45 C 20,70.45 17.4,66.15 16.6,63.9 16.15,62.75 14.2,59.2 12.5,58.25 11.1,57.5 9.1,55.65 12.45,55.600001 c 3.15,-0.05 5.4,2.899999 6.15,4.1 3.6,6.05 9.35,4.35 11.65,3.3 0.35,-2.6 1.4,-4.35 2.55,-5.35 -8.9,-1 -18.2,-4.45 -18.2,-19.75 0,-4.35 1.55,-7.95 4.1,-10.75 -0.4,-1 -1.8,-5.1 0.4,-10.6 0,0 3.35,-1.05 11,4.1 3.2,-0.9 6.6,-1.35 10,-1.35 3.4,0 6.8,0.45 10,1.35 7.65,-5.2 11,-4.1 11,-4.1 2.2,5.5 0.8,9.6 0.4,10.6 2.55,2.8 4.1,6.35 4.1,10.75 0,15.35 -9.35,18.75 -18.25,19.75 1.45,1.25 2.7,3.65 2.7,7.4 0,5.349999 -0.05,9.65 -0.05,11 0,1.05 0.75,2.3 2.75,1.9 A 40.065,40.065 0 0 0 80,40 C 80,17.900001 62.1,0 40,0 Z' id='path2' style='stroke-width:5' /%3E%3C/svg%3E%0A")
+    no-repeat;
+}
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .header-github-link::before {
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg viewBox='0 0 80 80' version='1.1' id='svg4' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cdefs id='defs8' /%3E%3Cpath fill='%23959da5' d='M 40,0 C 17.9,0 0,17.900001 0,40 c 0,17.7 11.45,32.65 27.35,37.950001 2,0.35 2.75,-0.85 2.75,-1.9 0,-0.95 -0.05,-4.1 -0.05,-7.45 C 20,70.45 17.4,66.15 16.6,63.9 16.15,62.75 14.2,59.2 12.5,58.25 11.1,57.5 9.1,55.65 12.45,55.600001 c 3.15,-0.05 5.4,2.899999 6.15,4.1 3.6,6.05 9.35,4.35 11.65,3.3 0.35,-2.6 1.4,-4.35 2.55,-5.35 -8.9,-1 -18.2,-4.45 -18.2,-19.75 0,-4.35 1.55,-7.95 4.1,-10.75 -0.4,-1 -1.8,-5.1 0.4,-10.6 0,0 3.35,-1.05 11,4.1 3.2,-0.9 6.6,-1.35 10,-1.35 3.4,0 6.8,0.45 10,1.35 7.65,-5.2 11,-4.1 11,-4.1 2.2,5.5 0.8,9.6 0.4,10.6 2.55,2.8 4.1,6.35 4.1,10.75 0,15.35 -9.35,18.75 -18.25,19.75 1.45,1.25 2.7,3.65 2.7,7.4 0,5.349999 -0.05,9.65 -0.05,11 0,1.05 0.75,2.3 2.75,1.9 A 40.065,40.065 0 0 0 80,40 C 80,17.900001 62.1,0 40,0 Z' id='path2' style='stroke-width:5' /%3E%3C/svg%3E%0A")
+    no-repeat;
+}
+
+.header-x-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1227' fill='rgb(149, 157, 165)'%3E%3Cpath d='M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z' /%3E%3C/svg%3E%0A")
+    no-repeat;
+}
+
+.header-x-link:hover {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .header-x-link::before {
+  background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1227' fill='rgb(149, 157, 165)'%3E%3Cpath d='M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z' /%3E%3C/svg%3E%0A")
+    no-repeat;
+}
+
+.header-linkedin-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 18'%3E%3Cpath d='M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z' fill='rgb(149, 157, 165)'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+.header-linkedin-link:hover {
+  opacity: 0.6;
+}
+
+[data-theme='dark'] .header-linkedin-link::before {
+  background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 18'%3E%3Cpath d='M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z' fill='rgb(149, 157, 165)'/%3E%3C/svg%3E")
+    no-repeat;
+}
