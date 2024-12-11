@@ -12,11 +12,21 @@
 
 # 🪐 🤖 Jupyter AI Agent
 
-*Use Jupyter AI Agent, an AI Agent equipped with tools like 'execute', 'insert_cell', and more, to transform your notebooks into an intelligent, interactive workspace!*
+*Use Jupyter AI Agent, an AI Agent equipped with tools like 'execute', 'insert_cell', and more, to transform your Jupyter Notebooks into an intelligent, interactive workspace!*
 
 ![Jupyter AI Agent](https://assets.datalayer.tech/jupyter-ai-agent/ai-agent-jupyterlab.gif)
 
-Jupyter AI Agent empowers **AI** models to **interact** with and **modify Jupyter notebooks**. The model is equipped with tools such as adding code cells, inserting markdown cells, executing code, enabling it to modify the notebook comprehensively based on user instructions. This agent is **innovative** as it is designed to **operate on the entire notebook**, not just at the cell level, enabling more comprehensive and seamless modifications.
+```
+Jupyter AI Agent <---> JupyterLab
+    |            (RTC)
+ JNC+JKC
+
+- JNC https://github.com/datalayer/jupyter-nbmodel-client
+- JKC https://github.com/datalayer/jupyter-kernel-client
+- RTC Real Time Collaboration
+```
+
+Jupyter AI Agent empowers **AI** models to **interact** with and **modify Jupyter Notebooks**. The model is equipped with tools such as adding code cells, inserting markdown cells, executing code, enabling it to modify the notebook comprehensively based on user instructions. This agent is **innovative** as it is designed to **operate on the entire notebook**, not just at the cell level, enabling more comprehensive and seamless modifications.
 
 This powerful functionality is made possible through [jupyter-nbmodel-client](https://github.com/datalayer/jupyter-nbmodel-client) and [jupyter-kernel-client](https://github.com/datalayer/jupyter-kernel-client), enabling interaction with Jupyter notebooks and kernels.
 
@@ -47,8 +57,12 @@ The Jupyter AI Agent can directly interact with JupyterLab and the modifications
 
 ```
 Jupyter AI Agent <---> JupyterLab
-    |            (rtc)
-JNC   JKC
+    |            (RTC)
+JNC+JKC
+
+- JNC https://github.com/datalayer/jupyter-nbmodel-client
+- JKC https://github.com/datalayer/jupyter-kernel-client
+- RTC Real Time Collaboration
 ```
 
 First, make sure you have JupyterLab installed:
@@ -85,23 +99,14 @@ After scraping, visualize the data with a line chart showing the closing prices 
 ''' # the input to the Jupyter AI Agent
 
 ask_agent(server_url, token, azure_deployment_name, notebook_path, input)
-````
+```
 
 ## Uninstall
 
-To remove the extension, execute:
+To uninstall the agent, execute:
 
 ```bash
 pip uninstall jupyter_ai_agent
-```
-
-## Troubleshoot
-
-If you are seeing the frontend extension, but it is not working, check
-that the server extension is enabled:
-
-```bash
-jupyter server extension list
 ```
 
 ## Contributing
