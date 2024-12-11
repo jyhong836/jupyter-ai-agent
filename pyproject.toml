@@ -25,6 +25,7 @@ dependencies = [
   "langchain-openai",
   "jupyter_kernel_client",
   "jupyter_nbmodel_client",
+  "python-dotenv",
 ]
 
 [project.optional-dependencies]
