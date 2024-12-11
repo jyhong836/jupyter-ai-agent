@@ -1,3 +1,7 @@
+# Copyright (c) 2023-2024 Datalayer, Inc.
+#
+# BSD 3-Clause License
+
 from dotenv import load_dotenv, find_dotenv
 
 from langchain.agents import tool
