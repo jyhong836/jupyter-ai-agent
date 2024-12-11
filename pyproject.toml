@@ -20,7 +20,7 @@ classifiers = [
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
 ]
-dependencies = ["jupyter_core", "jupyter_client>=7.4.4", "requests", "traitlets>=5.3", "websocket-client"]
+dependencies = ["jupyter_core", "jupyter_client>=7.4.4", "requests", "traitlets>=5.3", "websocket-client", "langchain", "langchain-openai", "python-dotenv", "jupyter_kernel_client", "jupyter_nbmodel_client", "jupyter-server-ydoc"]
 
 [project.optional-dependencies]
 console = ["jupyter_console"]

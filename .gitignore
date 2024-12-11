@@ -55,6 +55,9 @@ coverage.xml
 *.mo
 *.pot
 
+# Environment variables:
+.env
+
 # Scrapy stuff:
 .scrapy
 
@@ -112,6 +115,5 @@ dmypy.json
 !**/.*rc.yml
 !**/.*config
 !*.*rc.json
-!**/.env
 !.github
 !.devcontainer
