@@ -14,6 +14,11 @@ def insert_execute_code_cell_tool(notebook: NbModelClient, kernel: KernelClient,
     notebook.insert_code_cell(cell_index, cell_content)
     results = notebook.execute_cell(cell_index, kernel)
     assert results["status"] == "ok"
+    if "outputs" in results:
+        # print("Code Execution Result: " + str(results["outputs"]))
+        return str(results["outputs"])
+    else:
+        return "Not outputs found"
 
 def insert_markdown_cell_tool(notebook: NbModelClient, cell_content: str, cell_index:int) -> None:
     """Insert a Markdown cell with a content at a specific index in the notebook."""

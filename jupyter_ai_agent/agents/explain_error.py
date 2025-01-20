@@ -11,7 +11,7 @@ from jupyter_ydoc import YNotebook
 from jupyter_nbmodel_client import NbModelClient
 from jupyter_kernel_client import KernelClient
 
-from jupyter_ai_agent.providers.azure_openai import create_azure_open_ai_agent
+from jupyter_ai_agent.providers.openai import create_open_ai_agent
 from jupyter_ai_agent.tools import insert_execute_code_cell_tool
 from jupyter_ai_agent.utils import retrieve_cells_content_until_first_error, retrieve_cells_content_error
 
@@ -25,7 +25,7 @@ Ensure updates to cell indexing when new cells are inserted. Maintain the logica
 """
 
 
-def explain_error(notebook: NbModelClient, kernel: KernelClient, azure_deployment_name: str, current_cell_index: int) -> list:
+def explain_error(notebook: NbModelClient, kernel: KernelClient, model: str, current_cell_index: int) -> list:
     """Explain and correct an error in a notebook based on the prior cells."""
 
     @tool
@@ -61,7 +61,7 @@ def explain_error(notebook: NbModelClient, kernel: KernelClient, azure_deploymen
     logger.debug("Prompt with content", system_prompt_final)
     logger.debug("Input", input)
 
-    agent = create_azure_open_ai_agent(azure_deployment_name, system_prompt_final, tools)
+    agent = create_open_ai_agent(model, system_prompt_final, tools)
     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
     
     return list(agent_executor.stream({"input": input}))

@@ -44,6 +44,7 @@ jupyter_ai_agent_aliases.update(
         "azure-openai-version": "JupyterAIAgentBaseApp.azure_openai_version",
         "azure-openai-api-key": "JupyterAIAgentBaseApp.azure_openai_api_key",
         "azure-ai-deployment-name": "JupyterAIAgentBaseApp.azure_ai_deployment_name",
+        "model": "JupyterAIAgentBaseApp.model",
         "current-cell-index": "JupyterAIAgentBaseApp.current_cell_index",
     }
 )
@@ -104,6 +105,11 @@ class JupyterAIAgentBaseApp(JupyterApp):
     )
     azure_ai_deployment_name = Unicode(
         "",
+        help="""Azure AI deployment name.""",
+        config=True,
+    )
+    model = Unicode(
+        "gpt-4o",
         help="""Azure AI deployment name.""",
         config=True,
     )

@@ -12,7 +12,10 @@ def retrieve_cells_content(notebook: NbModelClient, cell_index_stop: int=-1) -> 
     for index, cell in enumerate(ydoc._ycells):
         if cell_index_stop != -1 and index == cell_index_stop:
             break
-        cells_content.append((index, cell["cell_type"], str(cell["source"])))
+        # cells_content.append((index, cell["cell_type"], str(
+        #     cell["source"]), str(cell["outputs"]) if "outputs" in cell.keys() else ""))
+        cells_content.append((index, cell["cell_type"], str(
+            cell["source"])))
         
     return cells_content
 

@@ -8,7 +8,7 @@ from langchain.agents import AgentExecutor
 from jupyter_nbmodel_client import NbModelClient
 from jupyter_kernel_client import KernelClient
 
-from jupyter_ai_agent.providers.azure_openai import create_azure_open_ai_agent
+from jupyter_ai_agent.providers.openai import create_open_ai_agent
 from jupyter_ai_agent.tools import insert_execute_code_cell_tool, insert_markdown_cell_tool
 from jupyter_ai_agent.utils import retrieve_cells_content
 
@@ -19,14 +19,14 @@ Assume that no packages are installed in the notebook, so install them using !pi
 Ensure updates to cell indexing when new cells are inserted. Maintain the logical flow of execution by adjusting cell index as needed.
 """
 
-def prompt(notebook: NbModelClient, kernel: KernelClient, input: str, azure_deployment_name: str, full_context: bool, current_cell_index: int) -> list:
+def prompt(notebook: NbModelClient, kernel: KernelClient, input: str, model: str, full_context: bool, current_cell_index: int) -> list:
     """From a given instruction, code and markdown cells are added to a notebook."""
 
     @tool
     def insert_execute_code_cell(cell_index: int, cell_content: str) -> str:
         """Add a Python code cell to the notebook at the given index with a content and execute it."""
-        insert_execute_code_cell_tool(notebook, kernel, cell_content, cell_index)
-        return "Code cell added and executed."
+        result = insert_execute_code_cell_tool(notebook, kernel, cell_content, cell_index)
+        return f"Code cell added and executed. Code Execution Result: {result}"
             
     @tool
     def insert_markdown_cell(cell_index: int, cell_content: str) -> str:
@@ -53,8 +53,9 @@ def prompt(notebook: NbModelClient, kernel: KernelClient, input: str, azure_depl
         """
     else:
         system_prompt_final = system_prompt_enriched
-        
-    agent = create_azure_open_ai_agent(azure_deployment_name, system_prompt_final, tools)
+    
+    print(f"====\n## system_prompt_final ##\n{system_prompt_final}\n====")
+    agent = create_open_ai_agent(model, system_prompt_final, tools)
     agent_executor = AgentExecutor(name="NotebookPromptAgent", agent=agent, tools=tools, verbose=True)
 
     return list(agent_executor.stream({"input": input}))

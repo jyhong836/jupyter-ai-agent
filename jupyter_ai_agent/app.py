@@ -43,7 +43,7 @@ class PromptAgentApp(JupyterAIAgentAskApp):
     flags = prompt_flags
 
     full_context = CBool(
-        False,
+        True,
         config=True,
         help="Fag to provide the full notebook context i.e. notebook content to the AI model.",
     )
@@ -53,7 +53,7 @@ class PromptAgentApp(JupyterAIAgentAskApp):
         super(PromptAgentApp, self).initialize(*args, **kwargs)
 
     def ask(self):
-        reply = prompt(self.notebook, self.kernel, super().input, super().azure_ai_deployment_name, self.full_context, self.current_cell_index)
+        reply = prompt(self.notebook, self.kernel, super().input, super().model, self.full_context, self.current_cell_index)
         logger.debug("Reply", reply)
 
     def start(self):
@@ -78,7 +78,7 @@ class ExplainErrorAgentApp(JupyterAIAgentAskApp):
         super(ExplainErrorAgentApp, self).initialize(*args, **kwargs)
 
     def ask(self):
-        reply = explain_error(self.notebook, self.kernel, super().azure_ai_deployment_name, self.current_cell_index)
+        reply = explain_error(self.notebook, self.kernel, super().model, self.current_cell_index)
         logger.debug("Reply", reply)
 
     def start(self):
